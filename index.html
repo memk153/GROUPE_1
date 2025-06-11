@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander des devis - Prestataires Pro</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Work4all"> <span>WORK <br> 4all</span>
+        </div>
+        <nav>
+            <a href="#">Se connecter</a> | <a href="#">S'inscrire</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>publier un projet</h1>
+
+        <div class="progress-bar">
+            <span class="dot active" data-step="1"></span>
+            <span class="dot" data-step="2"></span>
+            <span class="dot" data-step="3"></span>
+            <span class="dot" data-step="4"></span>
+        </div>
+
+        <form id="projectForm" enctype="multipart/form-data">
+            <div class="form-step active" id="step1">
+                <label for="title">Titre de votre besoin *</label>
+                <input type="text" id="title" name="title" placeholder="Exemple : Création d'un site e-com" required>
+                <button type="button" class="next-btn">Suivant</button>
+            </div>
+
+            <div class="form-step" id="step2">
+                <label for="category">Choisissez le type de service *</label>
+                <select id="category" name="category" required>
+                    <option value="">Sélectionnez une catégorie</option>
+                    <option value="Informatique & Digital">Informatique & Digital</option>
+                    <option value="Bâtiment & Rénovation">Bâtiment & Rénovation</option>
+                    <option value="Services à la personne">Services à la personne</option>
+                    <option value="Autre">Autre</option>
+                </select>
+
+                <div id="subCategoryContainer" style="display: none;">
+                    <label for="subCategory" style="margin-top: 15px; display: block;">Choisissez une sous-catégorie (optionnel)</label>
+                    <select id="subCategory" name="subCategory">
+                        <option value="">Sélectionnez une sous-catégorie</option>
+                        </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="prev-btn">Précédent</button>
+                    <button type="button" class="next-btn">Suivant</button>
+                </div>
+            </div>
+
+            <div class="form-step" id="step3">
+                <label for="description">Précisez les détails et le lieu *</label>
+                <textarea id="description" name="description" rows="6" placeholder="Décrivez précisément ce que vous attendez : matériaux, délais, problèmes rencontrés, etc." required></textarea>
+
+                <label for="photos" style="margin-top: 15px; display: block;">Ajouter des photos/documents (optionnel)</label>
+                <input type="file" id="photos" name="photos[]" multiple accept="image/*,application/pdf">
+
+                <label for="location" style="margin-top: 15px; display: block;">Localisation du service *</label>
+                <input type="text" id="location" name="location" placeholder="Ex: Yaoundé, Centre" required>
+
+                <div class="button-group">
+                    <button type="button" class="prev-btn">Précédent</button>
+                    <button type="button" class="next-btn">Suivant</button>
+                </div>
+            </div>
+
+            <div class="form-step" id="step4">
+                <label for="desiredDate">Quand souhaitez-vous que le service soit réalisé ? *</label>
+                <select id="desiredDate" name="desiredDate" required>
+                    <option value="">Sélectionnez une option</option>
+                    <option value="Dès que possible">Dès que possible</option>
+                    <option value="Dans les 2 prochaines semaines">Dans les 2 prochaines semaines</option>
+                    <option value="Dans le mois">Dans le mois</option>
+                    <option value="Date spécifique">Date spécifique (à discuter)</option>
+                    <option value="Flexible">Flexible</option>
+                </select>
+
+                <label for="budget" style="margin-top: 15px; display: block;">Votre budget estimé (optionnel)</label>
+                <select id="budget" name="budget">
+                    <option value="">Sélectionnez une fourchette</option>
+                    <option value="Moins de 20.000 XAF">Moins de 20.000 XAF</option>
+                    <option value="20.000 - 50.000 XAF">20.000 - 50.000 XAF</option>
+                    <option value="50.000 - 100.000 XAF">50.000 - 100.000 XAF</option>
+                    <option value="Plus de 100.000 XAF">Plus de 100.000 XAF</option>
+                    <option value="À discuter avec le prestataire">À discuter avec le prestataire</option>
+                </select>
+
+                <div class="button-group">
+                    <button type="button" class="prev-btn">Précédent</button>
+                    <button type="submit" class="submit-btn">Publier le projet</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="script.js"></script> </body>
+</html>
