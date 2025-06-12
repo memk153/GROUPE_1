@@ -1,0 +1,125 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 50px;
+            background-color: #f5f9ff;
+            color: #2d3748;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #1e4b8f;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(63, 114, 175, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #f8fafc;
+        }
+        
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            outline: none;
+        }
+        
+        button {
+            padding: 12px;
+            width: 100%;
+            margin-top: 15px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(29, 78, 216, 0.2);
+        }
+        
+        .message {
+            text-align: center;
+            margin: 20px auto;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            max-width: 350px;
+        }
+        
+        .error {
+            color: #dc2626;
+            background-color: #fee2e2;
+            border: 1px solid #fca5a5;
+        }
+        
+        .success {
+            color: #065f46;
+            background-color: #d1fae5;
+            border: 1px solid #6ee7b7;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: auto;
+        }
+
+        .home-btn button {
+            width: auto;
+            padding: 8px 15px;
+            margin: 0;
+            background-color: #64748b;
+            font-size: 0.9em;
+        }
+
+        .home-btn button:hover {
+            background-color: #475569;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+                padding-top: 60px;
+            }
+            
+            form {
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .message {
+                max-width: 100%;
+            }
+            
+            .home-btn {
+                top: 10px;
+                left: 10px;
+            }
+        }

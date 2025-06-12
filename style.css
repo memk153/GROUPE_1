@@ -2,38 +2,40 @@
 
 /* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Couleur de fond légère */
-    color: #333;
+    background-color: #f5f9ff; /* Bleu très clair pour le fond */
+    color: #2d3748; /* Gris bleuté foncé pour le texte */
     line-height: 1.6;
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(63, 114, 175, 0.1); /* Ombre bleutée */
+    border: 1px solid #e2e8f0; /* Bordure bleu très clair */
 }
 
 h1 {
     text-align: center;
-    color: #0f0f0f; /* Couleur bleue principale */
+    color: #1e4b8f; /* Bleu marine */
     margin-bottom: 30px;
+    font-weight: 600;
 }
 
 /* Header de l'application */
 header {
-    background-color: #090909; /* Bleu des prestataires pro */
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Dégradé de bleu */
     color: white;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(30, 58, 138, 0.3);
 }
 
 header .logo {
@@ -42,95 +44,127 @@ header .logo {
 }
 
 header .logo img {
-    height: 40px; /* Taille du logo */
+    height: 40px;
     margin-right: 10px;
-    filter: brightness(0) invert(1); /* Pour rendre le logo blanc si originalement coloré */
+    filter: brightness(0) invert(1);
 }
 
 header .logo span {
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.1;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 header nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+    margin: 0 12px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Formulaire */
 .form-step {
-    display: none; /* Toutes les étapes sont cachées par défaut */
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .form-step.active {
-    display: block; /* L'étape active est affichée */
+    display: block;
 }
 
 label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
+    font-weight: 600;
+    color: #2c5282; /* Bleu foncé */
 }
 
 input[type="text"],
-input[type="email"], /* Pour une future étape de contact */
+input[type="email"],
 input[type="file"],
 textarea,
 select {
-    width: calc(100% - 20px); /* Ajuster la largeur en fonction du padding */
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #cbd5e0; /* Bordure bleu-gris */
+    border-radius: 6px;
     font-size: 1em;
-    box-sizing: border-box; /* Inclut padding et border dans la largeur */
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f8fafc; /* Fond très clair */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3b82f6; /* Bleu vif */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
 }
 
 textarea {
-    resize: vertical; /* Permet de redimensionner verticalement */
+    resize: vertical;
+    min-height: 120px;
 }
 
 button {
     padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .next-btn {
-    background-color: #090909; /* Bleu Prestataire Pro */
+    background-color: #2563eb; /* Bleu vif */
     color: white;
-    float: right; /* Aligne le bouton à droite */
+    float: right;
 }
 
 .next-btn:hover {
-    background-color: #0f1010;
+    background-color: #1d4ed8; /* Bleu plus foncé */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.2);
 }
 
 .prev-btn {
-    background-color: #6c757d; /* Gris */
+    background-color: #64748b; /* Gris bleuté */
     color: white;
 }
 
 .prev-btn:hover {
-    background-color: #5a6268;
+    background-color: #475569; /* Gris bleuté plus foncé */
+    transform: translateY(-2px);
 }
 
 .submit-btn {
-    background-color: #28a745; /* Vert pour la publication */
+    background-color: #1e40af; /* Bleu foncé */
     color: white;
     float: right;
 }
 
 .submit-btn:hover {
-    background-color: #218838;
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 58, 138, 0.2);
 }
 
 .button-group {
@@ -145,34 +179,87 @@ button {
     justify-content: center;
     margin-bottom: 30px;
     position: relative;
-    padding-top: 10px; /* Pour espace au-dessus des points */
+    padding-top: 10px;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e2e8f0; /* Ligne de progression grise */
+    z-index: 1;
 }
 
 .progress-bar .dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 8px;
-    background-color: #ccc;
+    height: 16px;
+    width: 16px;
+    margin: 0 15px;
+    background-color: #cbd5e0; /* Point inactif */
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    border: 3px solid #f8fafc; /* Bordure blanche */
 }
 
 .progress-bar .dot.active {
-    background-color: #0b0b0b; /* Point actif */
+    background-color: #2563eb; /* Point actif bleu */
+    transform: scale(1.1);
 }
 
-/* Responsivité de base */
+.progress-bar .dot.completed {
+    background-color: #2563eb; /* Point complété */
+}
+
+.progress-bar .dot.completed::after {
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsivité */
 @media (max-width: 768px) {
     .container {
         margin: 20px;
         padding: 20px;
+        border-radius: 8px;
     }
+    
     header {
         flex-direction: column;
         text-align: center;
+        padding: 15px;
     }
+    
     header nav {
-        margin-top: 10px;
-    }
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    header nav a {
+        margin: 5px;
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+    
+    .progress-bar .dot {
+        height: 14px;
+        width: 14px;
+        margin: 0 10px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
 }
