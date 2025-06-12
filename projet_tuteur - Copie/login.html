@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login</title>
+<style>
+/* Reset de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container central */
+.container {
+  background-color: #fff;
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,123,255,0.2);
+}
+
+/* Boutons */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Style boutons */
+button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Bouton principal (si besoin) */
+.btn-primary {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Bouton secondaire (si besoin) */
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    padding: 30px 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Login</h1>
+<form>
+  <label for="nom">Nom</label>
+  <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+
+  <label for="prenom">Prénom</label>
+  <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="exemple@domain.com" required />
+
+  <label for="telephone">Téléphone</label>
+  <input type="tel" id="telephone" name="telephone" placeholder="Numéro de téléphone" pattern="\d+" maxlength="15" required />
+
+  <label for="motdepasse">Mot de passe</label>
+  <input type="password" id="motdepasse" name="motdepasse" placeholder="6 caractères (chiffres et lettres)" pattern="[A-Za-z0-9]{6,}" title="Minimum 6 caractères, chiffres et lettres" required />
+
+  <!-- Boutons supprimés -->
+</form>
+<!-- Boutons additionnels -->
+<div class="bottom-buttons" style="margin-top:30px; display:flex; justify-content:space-between;">
+ <a href="prestataire.html" style="background-color:#28a745; color:#fff; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; text-decoration:none; display:inline-block;">Devenir prestataire</a>
+  <button style="background-color:#17a2b8; color:#fff; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">Publier un projet</button>
+</div>
+</div>
+</body>
+</html>
