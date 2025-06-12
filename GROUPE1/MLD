@@ -1,0 +1,15 @@
+# Modèle créé le : Wed Jun 11 05:27:31 WAT 2025 
+
+
+UTILISATEUR (id_user_UTILISATEUR, nom_UTILISATEUR, mot_de_passe_UTILISATEUR, #prestataire_id_prestataire__prestataire) 
+PRESTATAIRE (id_prestataire__PRESTATAIRE, competences_PRESTATAIRE, tarif_horaire_PRESTATAIRE, #id_user_PRESTATAIRE, #utilisateur_id_user_utilisateur) 
+__AVIS__ (id_avis____AVIS__, #id_mission___AVIS__, note________AVIS__, _comment____AVIS__) 
+_PROPOSANT (id_proposant__PROPOSANT, id_user_UTILISATEUR, besoin_desc__PROPOSANT) 
+_____MISSION (id_mission____MISSION, #id_serv______MISSION, #id_prest______MISSION, #id_prop________MISSION, #id_offre______MISSION, statut_________MISSION) 
+_OFFRE (id_offre__OFFRE, id_prop__OFFRE, titre___OFFRE, desc___OFFRE, budget___OFFRE, id_proposant__PROPOSANT) 
+_PAIEMENT (id_pay__PAIEMENT, #id_mission__PAIEMENT, montant__PAIEMENT, #id_prestataire__PRESTATAIRE) 
+Efectue (id_proposant__PROPOSANT, id_pay__PAIEMENT, obligatoire_Efectue) 
+Accomplie (id_prestataire__PRESTATAIRE, id_mission____MISSION) 
+Accepte (id_prestataire__PRESTATAIRE, id_offre__OFFRE) 
+donner (id_avis____AVIS__, id_proposant__PROPOSANT) 
+Contacter (id_prestataire__PRESTATAIRE, id_proposant__PROPOSANT) 
